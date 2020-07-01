@@ -8,6 +8,7 @@ import {
   NavLink,
   Switch,
 } from 'react-router-dom';
+import ProjectPage from './projects/ProjectPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/projects" exact component={ProjectsPage} />
+          <Route path="/projects/:id" component={ProjectPage} />
         </Switch>
       </div>
     </Router>

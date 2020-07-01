@@ -1,6 +1,6 @@
 // import { Project } from './Project';
 
-import { Project } from "./Project";
+import { Project } from './Project';
 
 const baseUrl = 'http://localhost:4000';
 const url = `${baseUrl}/projects`;
@@ -44,6 +44,9 @@ function delay(ms: number) {
 }
 
 const projectAPI = {
+  find(id: number) {
+    return fetch(`${url}/${id}`).then(checkStatus).then(parseJSON);
+  },
   get(page = 1, limit = 20) {
     return (
       fetch(`${url}?_page=${page}&_limit=${limit}&_sort=name`)
