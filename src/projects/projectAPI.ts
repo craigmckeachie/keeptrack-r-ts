@@ -1,5 +1,7 @@
 // import { Project } from './Project';
 
+import { Project } from "./Project";
+
 const baseUrl = 'http://localhost:4000';
 const url = `${baseUrl}/projects`;
 
@@ -55,6 +57,24 @@ const projectAPI = {
           );
         })
     );
+  },
+
+  put(project: Project) {
+    return fetch(`${url}/${project.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(project),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(checkStatus)
+      .then(parseJSON)
+      .catch((error: TypeError) => {
+        console.log('log client error ' + error);
+        throw new Error(
+          'There was an error updating the project. Please try again.'
+        );
+      });
   },
 };
 
