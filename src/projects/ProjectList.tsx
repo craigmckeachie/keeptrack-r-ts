@@ -43,7 +43,11 @@ class ProjectList extends React.Component<ProjectListProps, ProjectListState> {
       } else {
         item = (
           <div key={project.id} className="cols-sm">
-            <ProjectForm onSave={onSave} onCancel={this.cancelEditing} />
+            <ProjectForm
+              project={project}
+              onSave={onSave}
+              onCancel={this.cancelEditing}
+            />
           </div>
         );
       }
