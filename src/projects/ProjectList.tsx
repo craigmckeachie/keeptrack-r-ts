@@ -8,11 +8,14 @@ interface ProjectListProps {
 }
 
 class ProjectList extends React.Component<ProjectListProps> {
+  handleEdit = (project: Project) => {
+    console.log(project);
+  };
   render() {
     const { projects } = this.props;
     const items = projects.map((project) => (
       <div key={project.id} className="cols-sm">
-        <ProjectCard project={project}></ProjectCard>
+        <ProjectCard onEdit={this.handleEdit} project={project}></ProjectCard>
         <ProjectForm />
       </div>
     ));
