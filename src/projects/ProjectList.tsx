@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from './Project';
 import ProjectCard from './ProjectCard';
+import ProjectForm from './ProjectForm';
 
 interface ProjectListProps {
   projects: Project[];
@@ -11,9 +12,8 @@ class ProjectList extends React.Component<ProjectListProps> {
     const { projects } = this.props;
     const items = projects.map((project) => (
       <div key={project.id} className="cols-sm">
-        <div className="card">
-          <ProjectCard project={project}></ProjectCard>
-        </div>
+        <ProjectCard project={project}></ProjectCard>
+        <ProjectForm />
       </div>
     ));
     return <div className="row">{items}</div>;
