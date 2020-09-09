@@ -1,5 +1,7 @@
 import React, { SyntheticEvent } from 'react';
 import { Project } from './Project';
+import { saveProject } from './state/projectActions';
+import { connect } from 'react-redux';
 
 interface ProjectFormProps {
   project: Project;
@@ -135,4 +137,8 @@ class ProjectForm extends React.Component<ProjectFormProps, ProjectFormState> {
   }
 }
 
-export default ProjectForm;
+const mapDispatchToProps = {
+  onSave: saveProject,
+};
+
+export default connect(null, mapDispatchToProps)(ProjectForm);
