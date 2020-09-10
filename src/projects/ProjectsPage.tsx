@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect } from 'react';
 import ProjectList from './ProjectList';
 import { loadProjects } from './state/projectActions';
-// import { projectAPI } from './projectAPI';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../state';
+import ProjectListSkeleton from './ProjectListSkeleton';
 
 function ProjectsPage() {
   const loading = useSelector(
@@ -43,7 +43,8 @@ function ProjectsPage() {
           </div>
         </div>
       )}
-      <ProjectList projects={projects} loading={loading}></ProjectList>
+      {loading && <ProjectListSkeleton />}
+      <ProjectList projects={projects}></ProjectList>
 
       {!loading && !error && (
         <div className="row">

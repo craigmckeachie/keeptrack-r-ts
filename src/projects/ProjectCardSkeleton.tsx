@@ -7,8 +7,8 @@ const ProjectCardSkeleton = (props: any) => (
     height={404}
     width={330}
     speed={3}
-    backgroundColor="#bababa"
-    foregroundColor="#8f8f8f"
+    backgroundColor="#e0e0e0"
+    foregroundColor="#c7c7c7"
     {...props}
   >
     <rect x="6" y="3" rx="10" ry="10" width="330" height="192" />
