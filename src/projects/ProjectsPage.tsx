@@ -43,7 +43,7 @@ function ProjectsPage() {
           </div>
         </div>
       )}
-      <ProjectList projects={projects}></ProjectList>
+      <ProjectList projects={projects} loading={loading}></ProjectList>
 
       {!loading && !error && (
         <div className="row">
@@ -57,12 +57,12 @@ function ProjectsPage() {
         </div>
       )}
 
-      {loading && (
+      {/* {loading && (
         <div className="center-page">
           <span className="spinner primary"></span>
           <p>Loading...</p>
         </div>
-      )}
+      )} */}
     </Fragment>
   );
 }
