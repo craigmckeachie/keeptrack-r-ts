@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ProjectList from './ProjectList';
 import { loadProjects } from './state/projectActions';
 import { useSelector, useDispatch } from 'react-redux';
@@ -29,8 +29,9 @@ function ProjectsPage() {
   };
 
   return (
-    <Fragment>
+    <div className="row page">
       <h1>Projects</h1>
+
       {error && (
         <div className="row">
           <div className="card large error">
@@ -64,7 +65,7 @@ function ProjectsPage() {
           <p>Loading...</p>
         </div>
       )} */}
-    </Fragment>
+    </div>
   );
 }
 

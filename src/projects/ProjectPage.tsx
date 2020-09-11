@@ -13,7 +13,7 @@ class ProjectPage extends React.Component<any, ProjectPageState> {
   state = {
     loading: false,
     project: undefined,
-    error: ''
+    error: '',
   };
 
   componentDidMount() {
@@ -21,24 +21,24 @@ class ProjectPage extends React.Component<any, ProjectPageState> {
     this.setState({ loading: true });
     projectAPI
       .find(id)
-      .then(data => this.setState({ project: data, loading: false }))
-      .catch(e => this.setState({ error: e.message, loading: false }));
+      .then((data) => this.setState({ project: data, loading: false }))
+      .catch((e) => this.setState({ error: e.message, loading: false }));
   }
   render() {
     const { loading, project, error } = this.state;
     return (
-      <React.Fragment>
-        <h1>Project Detail</h1>
+      <div className="row page">
+        <div className="col-sm-12">
+          <h1>Project Detail</h1>
 
-        {loading && (
-          <div className="center-page">
-            <span className="spinner primary"></span>
-            <p>Loading...</p>
-          </div>
-        )}
+          {loading && (
+            <div className="center-page">
+              <span className="spinner primary"></span>
+              <p>Loading...</p>
+            </div>
+          )}
 
-        {error && (
-          <div className="row">
+          {error && (
             <div className="card large error">
               <section>
                 <p>
@@ -46,11 +46,11 @@ class ProjectPage extends React.Component<any, ProjectPageState> {
                 </p>
               </section>
             </div>
-          </div>
-        )}
+          )}
 
-        {project && <ProjectDetail project={project} />}
-      </React.Fragment>
+          {project && <ProjectDetail project={project} />}
+        </div>
+      </div>
     );
   }
 }

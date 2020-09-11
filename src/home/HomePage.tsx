@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function HomePage() {
   return (
-    <div className="row">
+    <div className="row page">
       <div className="col-sm-offset-3 col-sm-6" style={{ marginTop: '30px' }}>
         <h1>The All-In-One Toolkit for Working Remotely.</h1>
         <h3>
